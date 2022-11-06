@@ -1,10 +1,9 @@
 package main;
 
 import library.Options;
+import library.books.BookManager;
 
 import java.util.Scanner;
-
-import static library.Options.ADD_BOOK;
 
 
 public class Main {
@@ -26,7 +25,16 @@ public class Main {
 
             switch (optiuneSelectata) {
                 case Options.ADD_BOOK:
-
+                    System.out.println("Numele cartii: ");
+                    sc.nextLine(); // To empty the buffer
+                    String bookName = sc.nextLine();
+                    System.out.println("Autorul cartii: ");
+                    String bookAuthor = sc.nextLine();
+                    System.out.println("Data publicarii: ");
+                    String bookPublishDate = sc.nextLine();
+                    System.out.println("Genul cartii: ");
+                    String bookGenre = sc.nextLine();
+                    BookManager.addBook(bookName, bookAuthor, bookPublishDate, bookGenre);
                     break;
                 case Options.SHOW_ALL_BOOKS:
 
