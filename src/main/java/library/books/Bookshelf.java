@@ -3,32 +3,50 @@ package library.books;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
 public class Bookshelf {
     Map<String, Book> books;
 
-    public static void main(String[] args) {
+    final String DATABASE_PATH = "books.json";
+    public static void main(String[] args) throws IOException {
         Bookshelf bKs = new Bookshelf();
         System.out.println(bKs);
+        bKs.saveBooks();
+
+
     }
+
+
     public Bookshelf() {
         try {
             loadBooks();
         } catch (IOException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
 
+    public Map<String, Book> getBooks() {
+        return books;
+    }
+
+    /**
+     *
+     * @throws IOException
+     */
     public void loadBooks() throws IOException {
         // Reads all elements as a list
-        List<String> readLines = Files.readAllLines(Paths.get("C:\\Users\\ACDnu\\Documents\\GitHub\\priectppoo\\resources\\books.json"), StandardCharsets.UTF_8);
+        List<String> readLines = Files.readAllLines(Path.of("C:\\Users\\ACDnu\\Documents\\GitHub\\priectppoo\\src\\main\\resources\\books.json"),
+                StandardCharsets.UTF_8);
 
         String newJson = String.join(" ", readLines);
 
@@ -40,7 +58,22 @@ public class Bookshelf {
         this.books = readBooks;
     }
 
-    public void saveBooks() {
 
+    public void saveBooks() {
+        Gson gson = new Gson();
+        String content = gson.toJson(books);
+
+        try (PrintWriter out = new PrintWriter("C:\\Users\\ACDnu\\Documents\\GitHub\\priectppoo\\src\\main\\resources\\books.json")) {
+            out.println(content);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+    public void addBook(Book book, String ID) {
+        books.put(ID, book);
+        this.saveBooks();
+    }
+
+
 }
