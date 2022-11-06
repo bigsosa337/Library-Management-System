@@ -37,10 +37,10 @@ public class Main {
                     BookManager.addBook(bookName, bookAuthor, bookPublishDate, bookGenre);
                     break;
                 case Options.SHOW_ALL_BOOKS:
-
+                    BookManager.showAllBooks();
                     break;
                 case Options.SHOW_AVAILABLE_BOOKS:
-
+                    BookManager.showAvailableBooks();
                     break;
                 case Options.BORROW_BOOK:
 
