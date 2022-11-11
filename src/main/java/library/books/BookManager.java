@@ -24,7 +24,7 @@ public class BookManager {
         System.out.println("ID-ul cartii este " + bookID);
         System.out.println("Cartea a fost adaugata in data de " + bookAddedDate);
 
-        Book book = new Book(bookName, bookAuthor, bookPublishDate, bookGenre, bookID, status);
+        Book book = new Book(bookName, bookAuthor, bookPublishDate, bookGenre, bookID, status, timesBorrowed);
         bookshelf.addBook(book, bookID);
     }
 
@@ -48,12 +48,15 @@ public class BookManager {
 
         Map<String, Book> books = bookshelf.getBooks();
         for (Map.Entry<String, Book> entry : books.entrySet()) {
-            if( entry.getValue().getBookStatus().equals("available")) {
-                entry.getValue().setBookStatus("unavailable");
-                bookshelf.saveBooks();
-                System.out.println("Cartea cu id-ul " + bookID + " a fost imprumutata");
-            } else {
-                System.out.println("Aceasta carte a fost deja imprumutata");
+            if (entry.getValue().getBookID().equals(bookID)) {
+                if (entry.getValue().getBookStatus().equals("available")) {
+                    entry.getValue().setBookStatus("unavailable");
+                    entry.getValue().setTimesBorrowed(entry.getValue().getTimesBorrowed() + 1);
+                    bookshelf.saveBooks();
+                    System.out.println("Cartea cu id-ul " + bookID + " a fost imprumutata");
+                } else {
+                    System.out.println("Aceasta carte a fost deja imprumutata");
+                }
             }
 
         }
@@ -63,8 +66,10 @@ public class BookManager {
     public static void returnBook (String bookID) {
         Map<String, Book> books = bookshelf.getBooks();
         for (Map.Entry<String, Book> entry : books.entrySet()) {
-            entry.getValue().setBookStatus("available");
-            bookshelf.saveBooks();
+            if (entry.getValue().getBookID().equals(bookID)) {
+                entry.getValue().setBookStatus("available");
+                bookshelf.saveBooks();
+            }
         }
 
 }

@@ -7,16 +7,16 @@ public class Book {
     String bookGenre;
     String bookID;
     String bookStatus;
-    String timesBorrowed;
+    int timesBorrowed;
 
-    public Book(String bookName, String bookAuthor, String bookPublishDate, String bookGenre, String bookID, String bookStatus) {
+    public Book(String bookName, String bookAuthor, String bookPublishDate, String bookGenre, String bookID, String bookStatus, int timesBorrowed) {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.bookPublishDate = bookPublishDate;
         this.bookGenre = bookGenre;
         this.bookID = bookID;
         this.bookStatus = bookStatus;
-//        this.timesBorrowed = timesBorrowed;
+        this.timesBorrowed = timesBorrowed;
     }
 
 
@@ -69,11 +69,11 @@ public class Book {
         this.bookStatus = bookStatus;
     }
 
-    public String getTimesBorrowed() {
+    public int getTimesBorrowed() {
         return timesBorrowed;
     }
 
-    public void setTimesBorrowed(String timesBorrowed) {
+    public void setTimesBorrowed(int timesBorrowed) {
         this.timesBorrowed = timesBorrowed;
     }
 
