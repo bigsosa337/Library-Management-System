@@ -7,6 +7,7 @@ public class Book {
     String bookGenre;
     String bookID;
     String bookStatus;
+    String timesBorrowed;
 
     public Book(String bookName, String bookAuthor, String bookPublishDate, String bookGenre, String bookID, String bookStatus) {
         this.bookName = bookName;
@@ -15,6 +16,7 @@ public class Book {
         this.bookGenre = bookGenre;
         this.bookID = bookID;
         this.bookStatus = bookStatus;
+//        this.timesBorrowed = timesBorrowed;
     }
 
 
@@ -67,15 +69,23 @@ public class Book {
         this.bookStatus = bookStatus;
     }
 
+    public String getTimesBorrowed() {
+        return timesBorrowed;
+    }
+
+    public void setTimesBorrowed(String timesBorrowed) {
+        this.timesBorrowed = timesBorrowed;
+    }
+
     @Override
     public String toString() {
-        return "Book{" +
-                "bookName='" + bookName + '\'' +
-                ", bookAuthor='" + bookAuthor + '\'' +
-                ", bookPublishDate='" + bookPublishDate + '\'' +
-                ", bookGenre='" + bookGenre + '\'' +
-                ", bookID='" + bookID + '\'' +
-                ", bookStatus='" + bookStatus + '\'' +
-                '}';
+        return  "Numele Cartii: " + bookName + '\n' +
+                "Autorul Cartii: " + bookAuthor + '\n' +
+                "Data Publicarii: " + bookPublishDate + '\n' +
+                "Genul Cartii: " + bookGenre + '\n' +
+                "ID-ul cartii: " + bookID + '\n' +
+                "Statusul cartii: " + bookStatus + '\n' +
+                "  " + '\n';
+
     }
 }

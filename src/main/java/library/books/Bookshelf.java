@@ -45,7 +45,7 @@ public class Bookshelf {
      */
     public void loadBooks() throws IOException {
         // Reads all elements as a list
-        List<String> readLines = Files.readAllLines(Path.of("C:\\Users\\ACDnu\\Documents\\GitHub\\priectppoo\\src\\main\\resources\\books.json"),
+        List<String> readLines = Files.readAllLines(Path.of("/home/andrei/IdeaProjects/priectppoo/src/main/resources/books.json"),
                 StandardCharsets.UTF_8);
 
         String newJson = String.join(" ", readLines);
@@ -63,12 +63,19 @@ public class Bookshelf {
         Gson gson = new Gson();
         String content = gson.toJson(books);
 
-        try (PrintWriter out = new PrintWriter("C:\\Users\\ACDnu\\Documents\\GitHub\\priectppoo\\src\\main\\resources\\books.json")) {
+        try (PrintWriter out = new PrintWriter("/home/andrei/IdeaProjects/priectppoo/src/main/resources/books.json")) {
             out.println(content);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
+
+//    public void changeStatus() {
+//        Gson gson = new Gson();
+//        String content = gson.toJson(books);
+//        this.books.put("status", "unavailable");
+//
+//    }
 
     public void addBook(Book book, String ID) {
         books.put(ID, book);

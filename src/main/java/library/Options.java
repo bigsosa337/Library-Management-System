@@ -10,7 +10,8 @@ public class Options {
     public static final int SHOW_AVAILABLE_BOOKS = 3;
     public static final int BORROW_BOOK = 4;
     public static final int RETURN_BOOK = 5;
-    public static final int EXIT = 6;
+    public static final int SEARCH_BOOK = 6;
+    public static final int EXIT = 7;
 
 
 
