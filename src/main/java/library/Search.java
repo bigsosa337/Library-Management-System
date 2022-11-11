@@ -1,7 +1,9 @@
 package library;
 
 import library.books.Book;
+import library.books.BookManager;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -43,17 +45,7 @@ public class Search {
             }
         }
     }
-//    public static void searchBookByYear() {
-//        System.out.println("Introdu data imprumutului: ");
-//        Scanner scan = new Scanner(System.in);
-//        Map<String, Book> books = bookshelf.getBooks();
-//        String bookBorrowName = scan.nextLine();
-//        for (Map.Entry<String, Book> entry : books.entrySet()) {
-//            if (entry.getValue().getBookPublishDate().equals(bookBorrowName)) {
-//                System.out.println(entry.getValue());
-//            }
-//        }
-//    }
+
 
     public static void searchBooks() {
         Scanner sc = new Scanner(System.in);
@@ -64,10 +56,8 @@ public class Search {
             Search.searchBookByAuthor();
         } else if (CAUTARE_AN == a) {
             Search.searchBookByYear();
-        } else if (CAUTARE_DATA_IMPRUMUT == a) {
-//          Search.searchBookByBorrowDate();
         } else if (CAUTARE_POPULARITATE == a) {
-//          Search.searchByBorrowedTimes();
+            BookManager.searchByPop();
         } else if (INAPOI_MENIU == a) {
 
         }

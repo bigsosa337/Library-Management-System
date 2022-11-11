@@ -85,6 +85,7 @@ public class Book {
                 "Genul Cartii: " + bookGenre + '\n' +
                 "ID-ul cartii: " + bookID + '\n' +
                 "Statusul cartii: " + bookStatus + '\n' +
+                "A fost imprumutata de: " + timesBorrowed + " ori" +
                 "  " + '\n';
 
     }

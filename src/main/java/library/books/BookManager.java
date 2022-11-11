@@ -1,10 +1,7 @@
 package library.books;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 public class BookManager {
 
@@ -73,6 +70,30 @@ public class BookManager {
         }
 
 }
+    public static void searchByPop() {
+        Map<String, Integer> maxime = new TreeMap<>(Collections.reverseOrder());
+        for (int i = 0; i < 4; i++) {
+            String maxID = "";
+            int max = -1;
+            for (Map.Entry<String, Book> entry : bookshelf.getBooks().entrySet()) {
+                if (entry.getValue().getTimesBorrowed() > max) {
+                    if (!maxime.containsValue(entry.getValue().getTimesBorrowed())) {
+                        max = entry.getValue().getTimesBorrowed();
+                        maxID = entry.getValue().getBookID();
+                    }
+
+                }
+            }
+            maxime.put(maxID, max);
+        }
+
+        for (Map.Entry<String, Integer> entry : maxime.entrySet()) {
+            System.out.println("-----------");
+            Book book = bookshelf.getBooks().get(entry.getKey());
+            System.out.println(book);
+        }
+
+    }
 
     public static void exit () {
 
