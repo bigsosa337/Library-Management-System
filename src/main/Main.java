@@ -55,6 +55,9 @@ public class Main {
                     sc.nextLine(); // Empty the buffer
                     String bookID = sc.nextLine();
                     BookManager.confirmBorrow(bookID);
+                    if (bookID != "available" && bookID != "unavailable") {
+                        System.out.println("Nu detinem cartea dorito");
+                    }
 
 
                     break;
