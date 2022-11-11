@@ -51,8 +51,10 @@ public class BookManager {
                     entry.getValue().setTimesBorrowed(entry.getValue().getTimesBorrowed() + 1);
                     bookshelf.saveBooks();
                     System.out.println("Cartea cu id-ul " + bookID + " a fost imprumutata");
-                } else if (){
+                } else if (entry.getValue().getBookStatus().equals("unavailable")){
                     System.out.println("Aceasta carte a fost deja imprumutata");
+                } else {
+                    System.out.println("Nu dispunem de aceasta carte");
                 }
             }
 
