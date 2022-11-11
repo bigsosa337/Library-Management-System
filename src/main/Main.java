@@ -74,8 +74,9 @@ public class Main {
                     System.out.println("1. Cauta dupa numele cartii");
                     System.out.println("2. Cauta dupa anul de publicatie");
                     System.out.println("3. Cauta dupa numele autorului");
-                    System.out.println("4. Vezi cele mai populare");
-                    System.out.println("5. Inapoi la meniul principal");
+                    System.out.println("4. Cauta dupa genul cartii");
+                    System.out.println("5. Vezi cele mai populare");
+                    System.out.println("6. Inapoi la meniul principal");
                     Search.searchBooks();
                     break;
                 case Options.EXIT:

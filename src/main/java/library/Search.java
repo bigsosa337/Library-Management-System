@@ -45,6 +45,17 @@ public class Search {
             }
         }
     }
+    public static void searchBookByGenre() {
+        System.out.println("Introdu genul cartii");
+        Scanner scan = new Scanner(System.in);
+        Map<String, Book> books = bookshelf.getBooks();
+        String bookBorrowName = scan.nextLine();
+        for (Map.Entry<String, Book> entry : books.entrySet()) {
+            if (entry.getValue().getBookGenre().equals(bookBorrowName)) {
+                System.out.println(entry.getValue());
+            }
+        }
+    }
 
 
     public static void searchBooks() {
@@ -58,6 +69,8 @@ public class Search {
             Search.searchBookByYear();
         } else if (CAUTARE_POPULARITATE == a) {
             BookManager.searchByPop();
+        } else if (CAUTARE_GEN == a) {
+            Search.searchBookByGenre();
         } else if (INAPOI_MENIU == a) {
 
         }

@@ -20,6 +20,7 @@ public class BookManager {
         System.out.println("Cartea are statusul de " + status);
         System.out.println("ID-ul cartii este " + bookID);
         System.out.println("Cartea a fost adaugata in data de " + bookAddedDate);
+        System.out.println("--------------------------------------------------");
 
         Book book = new Book(bookName, bookAuthor, bookPublishDate, bookGenre, bookID, status, timesBorrowed);
         bookshelf.addBook(book, bookID);
