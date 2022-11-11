@@ -73,7 +73,7 @@ public class BookManager {
 }
     public static void searchByPop() {
         Map<String, Integer> maxime = new TreeMap<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             String maxID = "";
             int max = -1;
             for (Map.Entry<String, Book> entry : bookshelf.getBooks().entrySet()) {
