@@ -74,9 +74,10 @@ public class Main {
                     System.out.println("4. Vezi cele mai populare");
                     System.out.println("5. Inapoi la meniul principal");
                     Search.searchBooks();
-
+                    break;
                 case Options.EXIT:
-//                    System.exit(0);
+                    BookManager.exit();
+                    System.exit(0);
                     break;
 
             }

@@ -51,7 +51,7 @@ public class BookManager {
                     entry.getValue().setTimesBorrowed(entry.getValue().getTimesBorrowed() + 1);
                     bookshelf.saveBooks();
                     System.out.println("Cartea cu id-ul " + bookID + " a fost imprumutata");
-                } else {
+                } else if (){
                     System.out.println("Aceasta carte a fost deja imprumutata");
                 }
             }
@@ -96,7 +96,7 @@ public class BookManager {
     }
 
     public static void exit () {
-
+        bookshelf.saveBooks();
     }
 
 
