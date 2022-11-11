@@ -72,7 +72,7 @@ public class BookManager {
 
 }
     public static void searchByPop() {
-        Map<String, Integer> maxime = new TreeMap<>(Collections.reverseOrder());
+        Map<String, Integer> maxime = new TreeMap<>();
         for (int i = 0; i < 4; i++) {
             String maxID = "";
             int max = -1;
