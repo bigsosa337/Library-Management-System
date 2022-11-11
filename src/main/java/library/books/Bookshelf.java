@@ -17,14 +17,6 @@ public class Bookshelf {
     Map<String, Book> books;
 
     final String DATABASE_PATH = "books.json";
-    public static void main(String[] args) throws IOException {
-        Bookshelf bKs = new Bookshelf();
-        System.out.println(bKs);
-        bKs.saveBooks();
-
-
-    }
-
 
     public Bookshelf() {
         try {
@@ -51,8 +43,7 @@ public class Bookshelf {
         String newJson = String.join(" ", readLines);
 
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, Book>>() {
-        }.getType();
+        Type type = new TypeToken<Map<String, Book>>() {}.getType();
 
         Map<String, Book> readBooks = gson.fromJson(newJson, type);
         this.books = readBooks;
@@ -70,17 +61,9 @@ public class Bookshelf {
         }
     }
 
-//    public void changeStatus() {
-//        Gson gson = new Gson();
-//        String content = gson.toJson(books);
-//        this.books.put("status", "unavailable");
-//
-//    }
-
     public void addBook(Book book, String ID) {
         books.put(ID, book);
         this.saveBooks();
     }
-
 
 }
