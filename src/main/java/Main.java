@@ -2,7 +2,11 @@
 import library.*;
 import library.books.Book;
 import library.books.BookManager;
-import library.books.Bookshelf;
+import library.search.SearchByAuthorStrategy;
+import library.search.SearchByNameStrategy;
+import library.search.SearchContext;
+import library.visitor.BookDetailsVisitor;
+import library.visitor.LibraryVisitor;
 
 import java.util.Map;
 import java.util.Scanner;

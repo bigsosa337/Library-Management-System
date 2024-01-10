@@ -1,6 +1,6 @@
 package library.books;
 
-import library.LibraryVisitor;
+import library.visitor.LibraryVisitor;
 
 public class Book {
     String bookName;

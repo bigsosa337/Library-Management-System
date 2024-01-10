@@ -1,13 +1,12 @@
-package library;
+package library.search;
 
 import library.books.Book;
 import library.books.BookManager;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import static library.SearchOptions.*;
+import static library.search.SearchOptions.*;
 import static library.books.BookManager.bookshelf;
 
 public class Search {

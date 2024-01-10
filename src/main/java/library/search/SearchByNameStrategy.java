@@ -1,4 +1,4 @@
-package library;
+package library.search;
 
 import library.books.Book;
 import library.books.BookManager;

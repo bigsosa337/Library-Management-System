@@ -1,4 +1,4 @@
-package library;
+package library.search;
 
 /**
  * This class was created to make it easier to store the search options for the books
