@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BookManager {
 
-    public static Bookshelf bookshelf = new Bookshelf();
+    public static Bookshelf bookshelf = Bookshelf.getInstance();
 
     public static void addBook(String bookName, String bookAuthor, String bookPublishDate, String bookGenre) {
         String status = "available";

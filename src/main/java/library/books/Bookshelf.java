@@ -14,11 +14,12 @@ import java.util.List;
 import java.util.Map;
 
 public class Bookshelf {
+    private static Bookshelf instance; // Singleton instance
     Map<String, Book> books;
 
     final String DATABASE_PATH = "books.json";
 
-    public Bookshelf() {
+    private Bookshelf() {
         try {
             loadBooks();
         } catch (IOException e) {
@@ -26,6 +27,13 @@ public class Bookshelf {
             throw new RuntimeException(e);
         }
     }
+    public static Bookshelf getInstance() {
+        if (instance == null) {
+            instance = new Bookshelf();
+        }
+        return instance;
+    }
+
 
     public Map<String, Book> getBooks() {
         return books;
@@ -37,7 +45,7 @@ public class Bookshelf {
      */
     public void loadBooks() throws IOException {
         // Reads all elements as a list
-        List<String> readLines = Files.readAllLines(Path.of("/home/andrei/IdeaProjects/priectppoo/src/main/resources/books.json"),
+        List<String> readLines = Files.readAllLines(Path.of("C:\\Users\\golf3\\Desktop\\Library-Management-System\\resources\\books.json"),
                 StandardCharsets.UTF_8);
 
         String newJson = String.join(" ", readLines);
@@ -54,7 +62,7 @@ public class Bookshelf {
         Gson gson = new Gson();
         String content = gson.toJson(books);
 
-        try (PrintWriter out = new PrintWriter("/home/andrei/IdeaProjects/priectppoo/src/main/resources/books.json")) {
+        try (PrintWriter out = new PrintWriter("C:\\Users\\golf3\\Desktop\\Library-Management-System\\resources\\books.json")) {
             out.println(content);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -66,4 +74,12 @@ public class Bookshelf {
         this.saveBooks();
     }
 
+    public Book getBook(String bookID) {
+        // Check if the book exists in the map and return it
+        if (books.containsKey(bookID)) {
+            return books.get(bookID);
+        } else {
+            return null; // or handle the case where the book is not found
+        }
+    }
 }

@@ -1,5 +1,7 @@
 package library.books;
 
+import library.LibraryVisitor;
+
 public class Book {
     String bookName;
     String bookAuthor;
@@ -88,5 +90,9 @@ public class Book {
                 "A fost imprumutata de: " + timesBorrowed + " ori" +
                 "  " + '\n';
 
+    }
+
+    public void accept(LibraryVisitor visitor) {
+        visitor.visit(this);
     }
 }

@@ -1,11 +1,1 @@
-{
-  "<d26e5c61d1a14b9d9bcd87b9ba521854>": {
-    "bookName": "Ion",
-    "bookAuthor": "Liviu Rebreanu",
-    "bookPublishDate": "1918",
-    "bookGenre": "Nebunie la moldoveni",
-    "bookID": "d26e5c61d1a14b9d9bcd87b9ba521854",
-    "bookStatus": "Available"
-
-  }
-}
+{"\u003cd26e5c61d1a14b9d9bcd87b9ba521854\u003e":{"bookName":"Ion","bookAuthor":"Liviu Rebreanu","bookPublishDate":"1918","bookGenre":"Nebunie la moldoveni","bookID":"d26e5c61d1a14b9d9bcd87b9ba521854","bookStatus":"Available","timesBorrowed":0},"a3443":{"bookName":"Hatz","bookAuthor":"John","bookPublishDate":"2001","bookGenre":"Actiune","bookID":"a3443","bookStatus":"available","timesBorrowed":0}}
